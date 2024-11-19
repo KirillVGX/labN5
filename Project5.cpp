@@ -15,30 +15,30 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "\nÌåíþ:\n";
-        cout << "1. Ñîçäàòü ñ÷åò\n";
-        cout << "2. Ïîïîëíèòü ñ÷åò\n";
-        cout << "3. Ñíÿòü äåíüãè\n";
-        cout << "4. Ïîêàçàòü ñ÷åòà\n";
-        cout << "5. Âûéòè\n";
-        cout << "Âàø âûáîð: ";
+        cout << "\nÐœÐµÐ½ÑŽ:\n";
+        cout << "1. Ð¡Ñ‚Ð²Ð¾Ñ€Ð¸Ñ‚Ð¸ Ñ€Ð°Ñ…ÑƒÐ½Ð¾Ðº\n";
+        cout << "2. ÐŸÐ¾Ð¿Ð¾Ð²Ð½Ð¸Ñ‚Ð¸ Ñ€Ð°Ñ…ÑƒÐ½Ð¾Ðº\n";
+        cout << "3. Ð—Ð½ÑÑ‚Ð¸ Ð³Ñ€Ð¾ÑˆÑ–\n";
+        cout << "4. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚Ð¸ Ñ€Ð°Ñ…ÑƒÐ½ÐºÐ¸\n";
+        cout << "5. Ð’Ð¸Ð¹Ñ‚Ð¸\n";
+        cout << "Ð’Ð°Ñˆ Ð²Ð¸Ð±Ñ–Ñ€: ";
         cin >> choice;
 
         if (choice == 1) {
             Account acc;
-            cout << "Ââåäèòå èìÿ âëàäåëüöà: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ–Ð¼'Ñ Ð²Ð»Ð°ÑÐ½Ð¸ÐºÐ°: ";
             cin >> acc.owner;
-            cout << "Ââåäèòå íîìåð ñ÷åòà: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ñ€Ð°Ñ…ÑƒÐ½ÐºÑƒ: ";
             cin >> acc.accountNumber;
             acc.balance = 0;
             accounts.push_back(acc);
-        }
+        } 
         else if (choice == 2) {
             int num;
             double sum;
-            cout << "Ââåäèòå íîìåð ñ÷åòà: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ñ€Ð°Ñ…ÑƒÐ½ÐºÑƒ: ";
             cin >> num;
-            cout << "Ââåäèòå ñóììó: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÑÑƒÐ¼Ñƒ: ";
             cin >> sum;
             for (auto& acc : accounts) {
                 if (acc.accountNumber == num) {
@@ -46,34 +46,34 @@ int main() {
                     break;
                 }
             }
-        }
+        } 
         else if (choice == 3) {
             int num;
             double sum;
-            cout << "Ââåäèòå íîìåð ñ÷åòà: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ñ€Ð°Ñ…ÑƒÐ½ÐºÑƒ: ";
             cin >> num;
-            cout << "Ââåäèòå ñóììó: ";
+            cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÑÑƒÐ¼Ñƒ: ";
             cin >> sum;
             for (auto& acc : accounts) {
                 if (acc.accountNumber == num) {
                     if (acc.balance >= sum) acc.balance -= sum;
-                    else cout << "Íåäîñòàòî÷íî ñðåäñòâ.\n";
+                    else cout << "ÐÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð½ÑŒÐ¾ ÐºÐ¾ÑˆÑ‚Ñ–Ð².\n";
                     break;
                 }
             }
-        }
+        } 
         else if (choice == 4) {
             for (const auto& acc : accounts) {
-                cout << "Èìÿ: " << acc.owner
-                    << ", Íîìåð: " << acc.accountNumber
-                    << ", Áàëàíñ: " << acc.balance << "\n";
+                cout << "Ð†Ð¼'Ñ: " << acc.owner 
+                     << ", ÐÐ¾Ð¼ÐµÑ€: " << acc.accountNumber 
+                     << ", Ð‘Ð°Ð»Ð°Ð½Ñ: " << acc.balance << "\n";
             }
-        }
+        } 
         else if (choice == 5) {
             break;
-        }
+        } 
         else {
-            cout << "Íåêîððåêòíûé âûáîð.\n";
+            cout << "ÐÐµÐºÐ¾Ñ€ÐµÐºÑ‚Ð½Ð¸Ð¹ Ð²Ð¸Ð±Ñ–Ñ€.\n";
         }
     }
 
